@@ -20,6 +20,45 @@ Windows users will need to install cygwin to enable building using autotools.
 See http://gridlab-d.sourceforge.net/wiki/index.php/MinGW/Eclipse_Installation
 for details.
 
+## Mac OSX build
+
+1. Install 'brew' if you have not already done so:
+```
+  host% /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+2. Install required tools, if they are not already installed:
+```
+  host% brew install automake
+  host% brew install gcc
+  host% brew install git
+  host% brew install wget
+  host% brew install xerces-c
+```
+Depending on the specifics of your machine, you may need to install additional dependencies.
+
+3. If you plan on using mysql, install it:
+```
+  host% brew install mysql
+```
+and follow the instructions for setting it up http://gridlab-d.sourceforge.net/wiki/index.php/MySQL.
+
+4. Clone the SLAC deployment of GridLAB-D:
+```
+  host% mkdir ~/gridlabd
+  host% cd ~/gridlabd
+  host% git clone https://github.com/dchassin/gridlabd-slac source
+```
+
+5. Build, install and validate GridLAB-D:
+```
+  host% cd ~/gridlabd/source
+  host% autoreconf -isf
+  host% ./configure --enable-silent-rules --prefix=/usr/local 'CXXFLAGS=-w -O2' 'CFLAGS=-w -O2'
+  host% make install
+  host% gridlabd --validate
+```
+
 ## Eclipse Editor Setup
 
 You can setup Eclipse as your GridLAB-D modeling editor.  See 
