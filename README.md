@@ -59,6 +59,12 @@ and follow the instructions for setting it up http://gridlab-d.sourceforge.net/w
   host% gridlabd --validate
 ```
 
+Note: On some system you must install GNU-sed if the build fails on something to do with 'sed':
+Install gnu sed
+```
+  host% brew install --with-default-names gnu-sed
+```
+
 ## Eclipse Editor Setup
 
 You can setup Eclipse as your GridLAB-D modeling editor.  See 
