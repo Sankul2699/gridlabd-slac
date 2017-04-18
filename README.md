@@ -31,6 +31,7 @@ for details.
 ```
   host% brew install automake
   host% brew install gcc
+  host% brew install libtool
   host% brew install git
   host% brew install wget
   host% brew install xerces-c
