@@ -17,7 +17,7 @@ Download the source code, build, install and validate (you will need autotools)
 ## Windows build
 
 Windows users will need to install cygwin to enable building using autotools.
-See http://gridlab-d.sourceforge.net/wiki/index.php/MinGW/Eclipse_Installation
+See [Windows build instructions](http://gridlab-d.sourceforge.net/wiki/index.php/MinGW/Eclipse_Installation)
 for details.
 
 ## Mac OSX build
@@ -41,7 +41,7 @@ Depending on the specifics of your machine, you may need to install additional d
 ```
   host% brew install mysql
 ```
-and follow the instructions for setting it up http://gridlab-d.sourceforge.net/wiki/index.php/MySQL.
+and follow the instructions for [setting up MySQL for GridLAB-D](http://gridlab-d.sourceforge.net/wiki/index.php/Mysql#Prerequisites).
 
 4. Clone the SLAC deployment of GridLAB-D:
 ```
@@ -65,10 +65,10 @@ Install gnu sed
   host% brew install --with-default-names gnu-sed
 ```
 
-## Eclipse Editor Setup
+## Eclipse Development Environment Setup
 
 You can setup Eclipse as your GridLAB-D modeling editor.  See 
-http://gridlab-d.sourceforge.net/wiki/index.php/Eclipse for details.
+[Eclipse setup instructions](http://gridlab-d.sourceforge.net/wiki/index.php/Eclipse) for details.
 
 # Online Documentation
 
