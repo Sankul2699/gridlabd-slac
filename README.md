@@ -35,12 +35,16 @@ for details.
   host% brew install git
   host% brew install wget
   host% brew install xerces-c
+  host% brew install homebrew/science/armadillo
 ```
 Depending on the specifics of your machine, you may need to install additional dependencies.
 
 3. If you plan on using mysql, install it:
 ```
   host% brew install mysql
+  host% brew install Caskroom/cask/mysqlworkbench
+  host% brew unlink mysql
+  host% brew install mysql-connector-c
 ```
 and follow the instructions for [setting up MySQL for GridLAB-D](http://gridlab-d.sourceforge.net/wiki/index.php/Mysql#Prerequisites).
 
@@ -56,15 +60,27 @@ and follow the instructions for [setting up MySQL for GridLAB-D](http://gridlab-
   host% cd ~/gridlabd/source
   host% autoreconf -isf
   host% ./configure --enable-silent-rules --prefix=/usr/local 'CXXFLAGS=-w -O2' 'CFLAGS=-w -O2'
+```
+If you are using MySQL, then use configure as follows
+```
+  host% ./configure --enable-silent-rules --prefix=/usr/local 'CXXFLAGS=-w -O2' 'CFLAGS=-w -O2' --with-mysql=/usr/local
+```
+Then make install and validate:
+```
   host% make install
   host% gridlabd --validate
 ```
 
-Note: On some system you must install GNU-sed if the build fails on something to do with 'sed':
+### Notes: 
+
+1. On some system you must install GNU-sed if the build fails on something to do with 'sed':
+
 Install gnu sed
 ```
   host% brew install --with-default-names gnu-sed
 ```
+
+2. Sometimes validation fails on `gldcore/autotest/test_filter_second.glm`. If you encounter this problem, changing the `CXXFLAGS` and `CFLAGS` optimization flags to `-O0` usually fixes it.
 
 ## Eclipse Development Environment Setup
 
